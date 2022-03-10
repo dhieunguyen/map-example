@@ -58,4 +58,47 @@
         android:backgroundTint="@color/purple_500"
         android:textColor="@color/white"
         />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="100dp"
+        android:paddingLeft="20dp"
+        >
+        <Button
+            android:id="@+id/first_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ho guom"
+            android:backgroundTint="@color/purple_500"
+            android:textColor="@color/white"
+            />
+        <Button
+            android:id="@+id/second_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ho tay"
+            android:backgroundTint="@color/purple_500"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/white"
+            />
+        <Button
+            android:id="@+id/third_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ba dinh"
+            android:backgroundTint="@color/purple_500"
+            android:textColor="@color/white"
+            android:layout_marginLeft="5dp"
+            />
+        <Button
+            android:id="@+id/fourth_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pho co"
+            android:backgroundTint="@color/purple_500"
+            android:textColor="@color/white"
+            android:layout_marginLeft="5dp"
+            />
+    </LinearLayout>
 </RelativeLayout>

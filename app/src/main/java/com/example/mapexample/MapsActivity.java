@@ -36,6 +36,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private EditText mSearchText;
     private Button mSearchBtn;
     private RelativeLayout mRelativeLayout;
+    private Button firstLoc;
+    private Button secLoc;
+    private Button thirdLoc;
+    private Button fourthLoc;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +47,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         setContentView(binding.getRoot());
         mSearchText = (EditText) findViewById(R.id.input_search);
         mSearchBtn = (Button) findViewById(R.id.searchBtn);
+        firstLoc = (Button) findViewById(R.id.first_location);
+        secLoc = (Button) findViewById(R.id.second_location);
+        thirdLoc = (Button) findViewById(R.id.third_location);
+        fourthLoc = (Button) findViewById(R.id.fourth_location);
         mRelativeLayout = (RelativeLayout) findViewById(R.id.myLinearLayout);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -51,6 +59,38 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
     private void init(){
         Log.d(TAG, "init: initializing");
+        firstLoc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(mRelativeLayout.getWindowToken(), 0);
+                moveCamera(new LatLng(21.028665,105.8501863),15);
+            }
+        });
+        secLoc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(mRelativeLayout.getWindowToken(), 0);
+                moveCamera(new LatLng(21.0580311,105.8503253),15);
+            }
+        });
+        thirdLoc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(mRelativeLayout.getWindowToken(), 0);
+                moveCamera(new LatLng(21.0358791,105.8121224),15);
+            }
+        });
+        fourthLoc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(mRelativeLayout.getWindowToken(), 0);
+                moveCamera(new LatLng(21.036382,105.8474423),15);
+            }
+        });
         mSearchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,18 +99,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 geoLocate();
             }
         });
-//        mSearchText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-//            @Override
-//            public boolean onEditorAction(TextView textView, int actionId, KeyEvent keyEvent) {
-//                if(actionId == EditorInfo.IME_ACTION_SEARCH
-//                        || actionId == EditorInfo.IME_ACTION_DONE
-//                        || keyEvent.getAction() == KeyEvent.ACTION_DOWN
-//                        || keyEvent.getAction() == KeyEvent.KEYCODE_ENTER){
-//                    geoLocate();
-//                }
-//                return false;
-//            }
-//        });
     }
     private void geoLocate(){
         Log.d(TAG, "geoLocate: geolocating");
